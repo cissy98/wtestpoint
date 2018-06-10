@@ -1,0 +1,1858 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:tns3="http://exceptions.priceplus.wakefern.com" xmlns:intf="http://bean.priceplus.wakefern.com" xmlns:wsi="http://ws-i.org/profiles/basic/1.1/xsd" xmlns:tns2="http://utils.priceplus.wakefern.com" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns4="http://domain.priceplus.wakefern.com" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:impl="http://bean.priceplus.wakefern.com" targetNamespace="http://bean.priceplus.wakefern.com" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://bean.priceplus.wakefern.com">
+      <xsd:import namespace="http://domain.priceplus.wakefern.com" />
+      <xsd:import namespace="http://utils.priceplus.wakefern.com" />
+      <xsd:element name="requestAdditionalCardResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="requestAdditionalCardReturn" nillable="true" type="tns2:Status" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getTargetedCoupons">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getTargetedCouponsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getTargetedCouponsReturn" nillable="true" type="impl:ArrayOf_tns4_nillable_Coupon" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getDigitalReceiptOptions">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getDigitalReceiptOptionsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getDigitalReceiptOptionsReturn" nillable="true" type="tns4:DigitalReceiptOptions" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="addChild">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+            <xsd:element name="aNewChild" nillable="true" type="tns4:Child" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="addChildResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="addChildReturn" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="enrollSRFamily">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="enrollSRFamilyResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="enrollSRFamilyReturn" nillable="true" type="tns2:Status" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="validateProfile2">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="firstName" nillable="true" type="xsd:string" />
+            <xsd:element name="lastName" nillable="true" type="xsd:string" />
+            <xsd:element name="address1" nillable="true" type="xsd:string" />
+            <xsd:element name="city" nillable="true" type="xsd:string" />
+            <xsd:element name="state" nillable="true" type="xsd:string" />
+            <xsd:element name="zipcode" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="validateProfile2Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="validateProfile2Return" nillable="true" type="tns2:Status" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getProfile2">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+            <xsd:element name="lastName" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getProfile2Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getProfile2Return" nillable="true" type="tns4:Customer" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteChild">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+            <xsd:element name="childId" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="deleteChildResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="deleteChildReturn" nillable="true" type="tns2:Status" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getTargetedMessages">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getTargetedMessagesResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getTargetedMessagesReturn" nillable="true" type="impl:ArrayOf_xsd_nillable_string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateChildren">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+            <xsd:element name="children" nillable="true" type="impl:ArrayOf_tns4_nillable_Child" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateChildrenResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="updateChildrenReturn" nillable="true" type="tns2:Status" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="isPricePlusCardPINSet">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="isPricePlusCardPINSetResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="isPricePlusCardPINSetReturn" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="debitFamilyPointAndBalance">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+            <xsd:element name="points" type="xsd:double" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="debitFamilyPointAndBalanceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="debitFamilyPointAndBalanceReturn" type="xsd:double" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllActiveClubPointDetails">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getAllActiveClubPointDetailsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getAllActiveClubPointDetailsReturn" nillable="true" type="impl:ArrayOf_tns4_nillable_PromotionPoint" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getProfileV2">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+            <xsd:element name="webStore" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getProfileV2Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getProfileV2Return" nillable="true" type="tns4:Customer" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getProfile2V2">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+            <xsd:element name="lastName" nillable="true" type="xsd:string" />
+            <xsd:element name="webStore" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getProfile2V2Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getProfile2V2Return" nillable="true" type="tns4:Customer" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="validateProfile2V2">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="webStore" nillable="true" type="xsd:string" />
+            <xsd:element name="firstName" nillable="true" type="xsd:string" />
+            <xsd:element name="lastName" nillable="true" type="xsd:string" />
+            <xsd:element name="address1" nillable="true" type="xsd:string" />
+            <xsd:element name="city" nillable="true" type="xsd:string" />
+            <xsd:element name="state" nillable="true" type="xsd:string" />
+            <xsd:element name="zipcode" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="validateProfile2V2Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="validateProfile2V2Return" nillable="true" type="tns2:Status" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPricePlusCardBalance">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getPricePlusCardBalanceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getPricePlusCardBalanceReturn" type="xsd:double" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateDigitalReceiptOptions">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+            <xsd:element name="options" nillable="true" type="tns4:DigitalReceiptOptions" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateDigitalReceiptOptionsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="updateDigitalReceiptOptionsReturn" nillable="true" type="tns2:Status" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateChild">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+            <xsd:element name="child" nillable="true" type="tns4:Child" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateChildResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="updateChildReturn" nillable="true" type="tns2:Status" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="setPricePlusCardPIN">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+            <xsd:element name="PIN" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="setPricePlusCardPINResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="setPricePlusCardPINReturn" type="xsd:boolean" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="creditFamilyPointAndBalance">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+            <xsd:element name="points" type="xsd:double" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="creditFamilyPointAndBalanceResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="creditFamilyPointAndBalanceReturn" type="xsd:double" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateProfile">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="customer" nillable="true" type="tns4:Customer" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateProfileResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="updateProfileReturn" nillable="true" type="tns2:Status" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getFamiliesPointDetails">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getFamiliesPointDetailsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getFamiliesPointDetailsReturn" nillable="true" type="tns4:PromotionPoint" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="validateProfileV2">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="webStore" nillable="true" type="xsd:string" />
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+            <xsd:element name="lastName" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="validateProfileV2Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="validateProfileV2Return" nillable="true" type="tns2:Status" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="enrollNewProfile">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="customer" nillable="true" type="tns4:Customer" />
+            <xsd:element name="overideAddress" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="enrollNewProfileResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="enrollNewProfileReturn" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="addTargetedCoupon">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+            <xsd:element name="couponCode" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="addTargetedCouponResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="addTargetedCouponReturn" nillable="true" type="tns2:Status" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getProfile">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getProfileResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getProfileReturn" nillable="true" type="tns4:Customer" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="enrollNewProfileV2">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="customer" nillable="true" type="tns4:Customer" />
+            <xsd:element name="overideAddress" nillable="true" type="xsd:string" />
+            <xsd:element name="webStore" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="enrollNewProfileV2Response">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="enrollNewProfileV2Return" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getChildren">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getChildrenResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getChildrenReturn" nillable="true" type="impl:ArrayOf_tns4_nillable_Child" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="validateProfile">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+            <xsd:element name="lastName" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="validateProfileResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="validateProfileReturn" nillable="true" type="tns2:Status" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateProfilePartnerNumber">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+            <xsd:element name="onePassNumber" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="updateProfilePartnerNumberResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="updateProfilePartnerNumberReturn" nillable="true" type="tns2:Status" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="validatePartnerNumber">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="partnerNumber" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="validatePartnerNumberResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="validatePartnerNumberReturn" nillable="true" type="tns2:Status" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getRedeemableFamiliesPointDetails">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getRedeemableFamiliesPointDetailsResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getRedeemableFamiliesPointDetailsReturn" nillable="true" type="tns4:PromotionPoint" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="profanityCheck">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="words" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="profanityCheckResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="profanityCheckReturn" nillable="true" type="tns2:Status" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="standardizeAddress">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="addressIn" nillable="true" type="tns4:Address" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="standardizeAddressResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="standardizeAddressReturn" nillable="true" type="tns4:Address" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getChild">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+            <xsd:element name="childId" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="getChildResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="getChildReturn" nillable="true" type="tns4:Child" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="requestAdditionalCard">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="accountId" nillable="true" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:complexType name="ArrayOf_tns4_nillable_Coupon">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Coupon" nillable="true" type="tns4:Coupon" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_xsd_nillable_string">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns4_nillable_Child">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Child" nillable="true" type="tns4:Child" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOf_tns4_nillable_PromotionPoint">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="PromotionPoint" nillable="true" type="tns4:PromotionPoint" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://utils.priceplus.wakefern.com">
+      <xsd:complexType name="Status">
+        <xsd:sequence>
+          <xsd:element name="statusCode" type="xsd:int" />
+          <xsd:element name="statusMessage" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://exceptions.priceplus.wakefern.com">
+      <xsd:complexType name="ProfileNotFoundException">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns3:PricePlusException">
+            <xsd:sequence>
+              <xsd:element name="accountId" nillable="true" type="xsd:string" />
+              <xsd:element name="lastName" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:complexType name="PricePlusException">
+        <xsd:sequence>
+          <xsd:element name="message" nillable="true" type="xsd:string" />
+          <xsd:element name="functionCode" nillable="true" type="xsd:string" />
+          <xsd:element name="javaClassName" nillable="true" type="xsd:string" />
+          <xsd:element name="javaErrorMsg" nillable="true" type="xsd:string" />
+          <xsd:element name="methodName" nillable="true" type="xsd:string" />
+          <xsd:element name="packageName" nillable="true" type="xsd:string" />
+          <xsd:element name="projectName" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:element name="ProfileNotFoundException" nillable="true" type="tns3:ProfileNotFoundException" />
+      <xsd:complexType name="InvalidInputDataException">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns3:PricePlusException">
+            <xsd:sequence>
+              <xsd:element name="fieldName" nillable="true" type="xsd:string" />
+              <xsd:element name="fieldValue" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="InvalidInputDataException" nillable="true" type="tns3:InvalidInputDataException" />
+      <xsd:element name="PricePlusException" nillable="true" type="tns3:PricePlusException" />
+      <xsd:complexType name="ChildExistsException">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns3:PricePlusException">
+            <xsd:sequence>
+              <xsd:element name="firstName" nillable="true" type="xsd:string" />
+              <xsd:element name="lastName" nillable="true" type="xsd:string" />
+              <xsd:element name="middleInitial" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ChildExistsException" nillable="true" type="tns3:ChildExistsException" />
+      <xsd:complexType name="ChildNotFoundException">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns3:PricePlusException">
+            <xsd:sequence>
+              <xsd:element name="childId" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ChildNotFoundException" nillable="true" type="tns3:ChildNotFoundException" />
+      <xsd:complexType name="InvalidPointsException">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns3:PricePlusException">
+            <xsd:sequence>
+              <xsd:element name="points" type="xsd:double" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="InvalidPointsException" nillable="true" type="tns3:InvalidPointsException" />
+      <xsd:complexType name="ProfileExistsException">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns3:PricePlusException">
+            <xsd:sequence>
+              <xsd:element name="accountId" nillable="true" type="xsd:string" />
+              <xsd:element name="firstName" nillable="true" type="xsd:string" />
+              <xsd:element name="lastName" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="ProfileExistsException" nillable="true" type="tns3:ProfileExistsException" />
+      <xsd:complexType name="InvalidAddressException">
+        <xsd:complexContent mixed="false">
+          <xsd:extension base="tns3:PricePlusException">
+            <xsd:sequence>
+              <xsd:element name="address" nillable="true" type="xsd:string" />
+            </xsd:sequence>
+          </xsd:extension>
+        </xsd:complexContent>
+      </xsd:complexType>
+      <xsd:element name="InvalidAddressException" nillable="true" type="tns3:InvalidAddressException" />
+    </xsd:schema>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://domain.priceplus.wakefern.com">
+      <xsd:complexType name="Coupon">
+        <xsd:sequence>
+          <xsd:element name="couponNumber" nillable="true" type="xsd:string" />
+          <xsd:element name="couponLine1" nillable="true" type="xsd:string" />
+          <xsd:element name="couponLine2" nillable="true" type="xsd:string" />
+          <xsd:element name="couponLine3" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="DigitalReceiptOptions">
+        <xsd:sequence>
+          <xsd:element name="digitalReceiptOption" nillable="true" type="xsd:string" />
+          <xsd:element name="digitalReceiptEmailOption" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Child">
+        <xsd:sequence>
+          <xsd:element name="dob" nillable="true" type="xsd:string" />
+          <xsd:element name="firstName" nillable="true" type="xsd:string" />
+          <xsd:element name="gender" nillable="true" type="xsd:string" />
+          <xsd:element name="lastName" nillable="true" type="xsd:string" />
+          <xsd:element name="middleInitial" nillable="true" type="xsd:string" />
+          <xsd:element name="childId" type="xsd:int" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Customer">
+        <xsd:sequence>
+          <xsd:element name="accountId" nillable="true" type="xsd:string" />
+          <xsd:element name="scFirstName" nillable="true" type="xsd:string" />
+          <xsd:element name="scLastName" nillable="true" type="xsd:string" />
+          <xsd:element name="scMiddleInitial" nillable="true" type="xsd:string" />
+          <xsd:element name="areaCode" nillable="true" type="xsd:string" />
+          <xsd:element name="email" nillable="true" type="xsd:string" />
+          <xsd:element name="telephoneNumber" nillable="true" type="xsd:string" />
+          <xsd:element name="dob" nillable="true" type="xsd:string" />
+          <xsd:element name="firstName" nillable="true" type="xsd:string" />
+          <xsd:element name="gender" nillable="true" type="xsd:string" />
+          <xsd:element name="householdSize" type="xsd:int" />
+          <xsd:element name="children" nillable="true" type="tns4:ArrayOfChild" />
+          <xsd:element name="lastName" nillable="true" type="xsd:string" />
+          <xsd:element name="middleInitial" nillable="true" type="xsd:string" />
+          <xsd:element name="promoPoints" nillable="true" type="tns4:ArrayOfPromotionPoint" />
+          <xsd:element name="partnerNumber" nillable="true" type="xsd:string" />
+          <xsd:element name="allowPromoMail" nillable="true" type="xsd:string" />
+          <xsd:element name="preferredStore" type="xsd:int" />
+          <xsd:element name="address" nillable="true" type="tns4:Address" />
+          <xsd:element name="cellAreaCode" nillable="true" type="xsd:string" />
+          <xsd:element name="cellTelephoneNumber" nillable="true" type="xsd:string" />
+          <xsd:element name="allowTextMessage" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfChild">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="Child" nillable="true" type="tns4:Child" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="PromotionPoint">
+        <xsd:sequence>
+          <xsd:element name="promotionCode" nillable="true" type="xsd:string" />
+          <xsd:element name="promotionName" nillable="true" type="xsd:string" />
+          <xsd:element name="lastUpdateDate" nillable="true" type="xsd:string" />
+          <xsd:element name="pointBalance" type="xsd:double" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="ArrayOfPromotionPoint">
+        <xsd:sequence>
+          <xsd:element minOccurs="0" maxOccurs="unbounded" name="PromotionPoint" nillable="true" type="tns4:PromotionPoint" />
+        </xsd:sequence>
+      </xsd:complexType>
+      <xsd:complexType name="Address">
+        <xsd:sequence>
+          <xsd:element name="address1" nillable="true" type="xsd:string" />
+          <xsd:element name="address2" nillable="true" type="xsd:string" />
+          <xsd:element name="city" nillable="true" type="xsd:string" />
+          <xsd:element name="state" nillable="true" type="xsd:string" />
+          <xsd:element name="zipcode" nillable="true" type="xsd:string" />
+          <xsd:element name="zipcode4" nillable="true" type="xsd:string" />
+          <xsd:element name="mailableStatus" nillable="true" type="xsd:string" />
+          <xsd:element name="addressStatus" nillable="true" type="xsd:string" />
+          <xsd:element name="postalRoute" nillable="true" type="xsd:string" />
+          <xsd:element name="statusMessage" nillable="true" type="xsd:string" />
+        </xsd:sequence>
+      </xsd:complexType>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="validateProfileV2Request">
+    <wsdl:part name="parameters" element="impl:validateProfileV2" />
+  </wsdl:message>
+  <wsdl:message name="validateProfile2Response">
+    <wsdl:part name="parameters" element="impl:validateProfile2Response" />
+  </wsdl:message>
+  <wsdl:message name="deleteChildResponse">
+    <wsdl:part name="parameters" element="impl:deleteChildResponse" />
+  </wsdl:message>
+  <wsdl:message name="standardizeAddressRequest">
+    <wsdl:part name="parameters" element="impl:standardizeAddress" />
+  </wsdl:message>
+  <wsdl:message name="getProfileV2Request">
+    <wsdl:part name="parameters" element="impl:getProfileV2" />
+  </wsdl:message>
+  <wsdl:message name="getDigitalReceiptOptionsResponse">
+    <wsdl:part name="parameters" element="impl:getDigitalReceiptOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProfileV2Response">
+    <wsdl:part name="parameters" element="impl:getProfileV2Response" />
+  </wsdl:message>
+  <wsdl:message name="getProfileResponse">
+    <wsdl:part name="parameters" element="impl:getProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateProfileRequest">
+    <wsdl:part name="parameters" element="impl:updateProfile" />
+  </wsdl:message>
+  <wsdl:message name="getChildResponse">
+    <wsdl:part name="parameters" element="impl:getChildResponse" />
+  </wsdl:message>
+  <wsdl:message name="getAllActiveClubPointDetailsResponse">
+    <wsdl:part name="parameters" element="impl:getAllActiveClubPointDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="profanityCheckResponse">
+    <wsdl:part name="parameters" element="impl:profanityCheckResponse" />
+  </wsdl:message>
+  <wsdl:message name="getRedeemableFamiliesPointDetailsResponse">
+    <wsdl:part name="parameters" element="impl:getRedeemableFamiliesPointDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPricePlusCardBalanceResponse">
+    <wsdl:part name="parameters" element="impl:getPricePlusCardBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProfileRequest">
+    <wsdl:part name="parameters" element="impl:getProfile" />
+  </wsdl:message>
+  <wsdl:message name="requestAdditionalCardRequest">
+    <wsdl:part name="parameters" element="impl:requestAdditionalCard" />
+  </wsdl:message>
+  <wsdl:message name="updateProfileResponse">
+    <wsdl:part name="parameters" element="impl:updateProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="setPricePlusCardPINRequest">
+    <wsdl:part name="parameters" element="impl:setPricePlusCardPIN" />
+  </wsdl:message>
+  <wsdl:message name="addChildRequest">
+    <wsdl:part name="parameters" element="impl:addChild" />
+  </wsdl:message>
+  <wsdl:message name="getAllActiveClubPointDetailsRequest">
+    <wsdl:part name="parameters" element="impl:getAllActiveClubPointDetails" />
+  </wsdl:message>
+  <wsdl:message name="updateProfilePartnerNumberRequest">
+    <wsdl:part name="parameters" element="impl:updateProfilePartnerNumber" />
+  </wsdl:message>
+  <wsdl:message name="validateProfile2V2Request">
+    <wsdl:part name="parameters" element="impl:validateProfile2V2" />
+  </wsdl:message>
+  <wsdl:message name="InvalidPointsException">
+    <wsdl:part name="fault" element="tns3:InvalidPointsException" />
+  </wsdl:message>
+  <wsdl:message name="getProfile2V2Response">
+    <wsdl:part name="parameters" element="impl:getProfile2V2Response" />
+  </wsdl:message>
+  <wsdl:message name="isPricePlusCardPINSetResponse">
+    <wsdl:part name="parameters" element="impl:isPricePlusCardPINSetResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFamiliesPointDetailsRequest">
+    <wsdl:part name="parameters" element="impl:getFamiliesPointDetails" />
+  </wsdl:message>
+  <wsdl:message name="PricePlusException">
+    <wsdl:part name="fault" element="tns3:PricePlusException" />
+  </wsdl:message>
+  <wsdl:message name="enrollSRFamilyResponse">
+    <wsdl:part name="parameters" element="impl:enrollSRFamilyResponse" />
+  </wsdl:message>
+  <wsdl:message name="enrollNewProfileRequest">
+    <wsdl:part name="parameters" element="impl:enrollNewProfile" />
+  </wsdl:message>
+  <wsdl:message name="isPricePlusCardPINSetRequest">
+    <wsdl:part name="parameters" element="impl:isPricePlusCardPINSet" />
+  </wsdl:message>
+  <wsdl:message name="InvalidAddressException">
+    <wsdl:part name="fault" element="tns3:InvalidAddressException" />
+  </wsdl:message>
+  <wsdl:message name="getTargetedMessagesRequest">
+    <wsdl:part name="parameters" element="impl:getTargetedMessages" />
+  </wsdl:message>
+  <wsdl:message name="updateDigitalReceiptOptionsRequest">
+    <wsdl:part name="parameters" element="impl:updateDigitalReceiptOptions" />
+  </wsdl:message>
+  <wsdl:message name="enrollNewProfileV2Request">
+    <wsdl:part name="parameters" element="impl:enrollNewProfileV2" />
+  </wsdl:message>
+  <wsdl:message name="debitFamilyPointAndBalanceRequest">
+    <wsdl:part name="parameters" element="impl:debitFamilyPointAndBalance" />
+  </wsdl:message>
+  <wsdl:message name="creditFamilyPointAndBalanceRequest">
+    <wsdl:part name="parameters" element="impl:creditFamilyPointAndBalance" />
+  </wsdl:message>
+  <wsdl:message name="ChildNotFoundException">
+    <wsdl:part name="fault" element="tns3:ChildNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="updateChildrenResponse">
+    <wsdl:part name="parameters" element="impl:updateChildrenResponse" />
+  </wsdl:message>
+  <wsdl:message name="validateProfile2Request">
+    <wsdl:part name="parameters" element="impl:validateProfile2" />
+  </wsdl:message>
+  <wsdl:message name="getProfile2Response">
+    <wsdl:part name="parameters" element="impl:getProfile2Response" />
+  </wsdl:message>
+  <wsdl:message name="creditFamilyPointAndBalanceResponse">
+    <wsdl:part name="parameters" element="impl:creditFamilyPointAndBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateChildRequest">
+    <wsdl:part name="parameters" element="impl:updateChild" />
+  </wsdl:message>
+  <wsdl:message name="getChildrenResponse">
+    <wsdl:part name="parameters" element="impl:getChildrenResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateChildrenRequest">
+    <wsdl:part name="parameters" element="impl:updateChildren" />
+  </wsdl:message>
+  <wsdl:message name="addTargetedCouponRequest">
+    <wsdl:part name="parameters" element="impl:addTargetedCoupon" />
+  </wsdl:message>
+  <wsdl:message name="validatePartnerNumberRequest">
+    <wsdl:part name="parameters" element="impl:validatePartnerNumber" />
+  </wsdl:message>
+  <wsdl:message name="validateProfileRequest">
+    <wsdl:part name="parameters" element="impl:validateProfile" />
+  </wsdl:message>
+  <wsdl:message name="debitFamilyPointAndBalanceResponse">
+    <wsdl:part name="parameters" element="impl:debitFamilyPointAndBalanceResponse" />
+  </wsdl:message>
+  <wsdl:message name="deleteChildRequest">
+    <wsdl:part name="parameters" element="impl:deleteChild" />
+  </wsdl:message>
+  <wsdl:message name="getTargetedMessagesResponse">
+    <wsdl:part name="parameters" element="impl:getTargetedMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="InvalidInputDataException">
+    <wsdl:part name="fault" element="tns3:InvalidInputDataException" />
+  </wsdl:message>
+  <wsdl:message name="addChildResponse">
+    <wsdl:part name="parameters" element="impl:addChildResponse" />
+  </wsdl:message>
+  <wsdl:message name="enrollNewProfileResponse">
+    <wsdl:part name="parameters" element="impl:enrollNewProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="standardizeAddressResponse">
+    <wsdl:part name="parameters" element="impl:standardizeAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="validateProfileResponse">
+    <wsdl:part name="parameters" element="impl:validateProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProfile2Request">
+    <wsdl:part name="parameters" element="impl:getProfile2" />
+  </wsdl:message>
+  <wsdl:message name="getDigitalReceiptOptionsRequest">
+    <wsdl:part name="parameters" element="impl:getDigitalReceiptOptions" />
+  </wsdl:message>
+  <wsdl:message name="getChildRequest">
+    <wsdl:part name="parameters" element="impl:getChild" />
+  </wsdl:message>
+  <wsdl:message name="setPricePlusCardPINResponse">
+    <wsdl:part name="parameters" element="impl:setPricePlusCardPINResponse" />
+  </wsdl:message>
+  <wsdl:message name="getTargetedCouponsResponse">
+    <wsdl:part name="parameters" element="impl:getTargetedCouponsResponse" />
+  </wsdl:message>
+  <wsdl:message name="ProfileExistsException">
+    <wsdl:part name="fault" element="tns3:ProfileExistsException" />
+  </wsdl:message>
+  <wsdl:message name="getRedeemableFamiliesPointDetailsRequest">
+    <wsdl:part name="parameters" element="impl:getRedeemableFamiliesPointDetails" />
+  </wsdl:message>
+  <wsdl:message name="validatePartnerNumberResponse">
+    <wsdl:part name="parameters" element="impl:validatePartnerNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="getChildrenRequest">
+    <wsdl:part name="parameters" element="impl:getChildren" />
+  </wsdl:message>
+  <wsdl:message name="addTargetedCouponResponse">
+    <wsdl:part name="parameters" element="impl:addTargetedCouponResponse" />
+  </wsdl:message>
+  <wsdl:message name="validateProfileV2Response">
+    <wsdl:part name="parameters" element="impl:validateProfileV2Response" />
+  </wsdl:message>
+  <wsdl:message name="ProfileNotFoundException">
+    <wsdl:part name="fault" element="tns3:ProfileNotFoundException" />
+  </wsdl:message>
+  <wsdl:message name="enrollNewProfileV2Response">
+    <wsdl:part name="parameters" element="impl:enrollNewProfileV2Response" />
+  </wsdl:message>
+  <wsdl:message name="requestAdditionalCardResponse">
+    <wsdl:part name="parameters" element="impl:requestAdditionalCardResponse" />
+  </wsdl:message>
+  <wsdl:message name="updateDigitalReceiptOptionsResponse">
+    <wsdl:part name="parameters" element="impl:updateDigitalReceiptOptionsResponse" />
+  </wsdl:message>
+  <wsdl:message name="getPricePlusCardBalanceRequest">
+    <wsdl:part name="parameters" element="impl:getPricePlusCardBalance" />
+  </wsdl:message>
+  <wsdl:message name="updateProfilePartnerNumberResponse">
+    <wsdl:part name="parameters" element="impl:updateProfilePartnerNumberResponse" />
+  </wsdl:message>
+  <wsdl:message name="getFamiliesPointDetailsResponse">
+    <wsdl:part name="parameters" element="impl:getFamiliesPointDetailsResponse" />
+  </wsdl:message>
+  <wsdl:message name="profanityCheckRequest">
+    <wsdl:part name="parameters" element="impl:profanityCheck" />
+  </wsdl:message>
+  <wsdl:message name="getTargetedCouponsRequest">
+    <wsdl:part name="parameters" element="impl:getTargetedCoupons" />
+  </wsdl:message>
+  <wsdl:message name="ChildExistsException">
+    <wsdl:part name="fault" element="tns3:ChildExistsException" />
+  </wsdl:message>
+  <wsdl:message name="validateProfile2V2Response">
+    <wsdl:part name="parameters" element="impl:validateProfile2V2Response" />
+  </wsdl:message>
+  <wsdl:message name="getProfile2V2Request">
+    <wsdl:part name="parameters" element="impl:getProfile2V2" />
+  </wsdl:message>
+  <wsdl:message name="enrollSRFamilyRequest">
+    <wsdl:part name="parameters" element="impl:enrollSRFamily" />
+  </wsdl:message>
+  <wsdl:message name="updateChildResponse">
+    <wsdl:part name="parameters" element="impl:updateChildResponse" />
+  </wsdl:message>
+  <wsdl:portType name="PricePlusJavaBean">
+    <wsdl:operation name="requestAdditionalCard">
+      <wsdl:input name="requestAdditionalCardRequest" message="impl:requestAdditionalCardRequest" />
+      <wsdl:output name="requestAdditionalCardResponse" message="impl:requestAdditionalCardResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ProfileNotFoundException" message="impl:ProfileNotFoundException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="getTargetedCoupons">
+      <wsdl:input name="getTargetedCouponsRequest" message="impl:getTargetedCouponsRequest" />
+      <wsdl:output name="getTargetedCouponsResponse" message="impl:getTargetedCouponsResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ProfileNotFoundException" message="impl:ProfileNotFoundException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="getDigitalReceiptOptions">
+      <wsdl:input name="getDigitalReceiptOptionsRequest" message="impl:getDigitalReceiptOptionsRequest" />
+      <wsdl:output name="getDigitalReceiptOptionsResponse" message="impl:getDigitalReceiptOptionsResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ProfileNotFoundException" message="impl:ProfileNotFoundException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="addChild">
+      <wsdl:input name="addChildRequest" message="impl:addChildRequest" />
+      <wsdl:output name="addChildResponse" message="impl:addChildResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ChildExistsException" message="impl:ChildExistsException" />
+      <wsdl:fault name="ProfileNotFoundException" message="impl:ProfileNotFoundException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="enrollSRFamily">
+      <wsdl:input name="enrollSRFamilyRequest" message="impl:enrollSRFamilyRequest" />
+      <wsdl:output name="enrollSRFamilyResponse" message="impl:enrollSRFamilyResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ProfileNotFoundException" message="impl:ProfileNotFoundException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="validateProfile2">
+      <wsdl:input name="validateProfile2Request" message="impl:validateProfile2Request" />
+      <wsdl:output name="validateProfile2Response" message="impl:validateProfile2Response" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="getProfile2">
+      <wsdl:input name="getProfile2Request" message="impl:getProfile2Request" />
+      <wsdl:output name="getProfile2Response" message="impl:getProfile2Response" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="deleteChild">
+      <wsdl:input name="deleteChildRequest" message="impl:deleteChildRequest" />
+      <wsdl:output name="deleteChildResponse" message="impl:deleteChildResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ProfileNotFoundException" message="impl:ProfileNotFoundException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+      <wsdl:fault name="ChildNotFoundException" message="impl:ChildNotFoundException" />
+    </wsdl:operation>
+    <wsdl:operation name="getTargetedMessages">
+      <wsdl:input name="getTargetedMessagesRequest" message="impl:getTargetedMessagesRequest" />
+      <wsdl:output name="getTargetedMessagesResponse" message="impl:getTargetedMessagesResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ProfileNotFoundException" message="impl:ProfileNotFoundException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="updateChildren">
+      <wsdl:input name="updateChildrenRequest" message="impl:updateChildrenRequest" />
+      <wsdl:output name="updateChildrenResponse" message="impl:updateChildrenResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ProfileNotFoundException" message="impl:ProfileNotFoundException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+      <wsdl:fault name="ChildNotFoundException" message="impl:ChildNotFoundException" />
+    </wsdl:operation>
+    <wsdl:operation name="isPricePlusCardPINSet">
+      <wsdl:input name="isPricePlusCardPINSetRequest" message="impl:isPricePlusCardPINSetRequest" />
+      <wsdl:output name="isPricePlusCardPINSetResponse" message="impl:isPricePlusCardPINSetResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ProfileNotFoundException" message="impl:ProfileNotFoundException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="debitFamilyPointAndBalance">
+      <wsdl:input name="debitFamilyPointAndBalanceRequest" message="impl:debitFamilyPointAndBalanceRequest" />
+      <wsdl:output name="debitFamilyPointAndBalanceResponse" message="impl:debitFamilyPointAndBalanceResponse" />
+      <wsdl:fault name="InvalidPointsException" message="impl:InvalidPointsException" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ProfileNotFoundException" message="impl:ProfileNotFoundException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="getAllActiveClubPointDetails">
+      <wsdl:input name="getAllActiveClubPointDetailsRequest" message="impl:getAllActiveClubPointDetailsRequest" />
+      <wsdl:output name="getAllActiveClubPointDetailsResponse" message="impl:getAllActiveClubPointDetailsResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ProfileNotFoundException" message="impl:ProfileNotFoundException" />
+    </wsdl:operation>
+    <wsdl:operation name="getProfileV2">
+      <wsdl:input name="getProfileV2Request" message="impl:getProfileV2Request" />
+      <wsdl:output name="getProfileV2Response" message="impl:getProfileV2Response" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="getProfile2V2">
+      <wsdl:input name="getProfile2V2Request" message="impl:getProfile2V2Request" />
+      <wsdl:output name="getProfile2V2Response" message="impl:getProfile2V2Response" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="validateProfile2V2">
+      <wsdl:input name="validateProfile2V2Request" message="impl:validateProfile2V2Request" />
+      <wsdl:output name="validateProfile2V2Response" message="impl:validateProfile2V2Response" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="getPricePlusCardBalance">
+      <wsdl:input name="getPricePlusCardBalanceRequest" message="impl:getPricePlusCardBalanceRequest" />
+      <wsdl:output name="getPricePlusCardBalanceResponse" message="impl:getPricePlusCardBalanceResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ProfileNotFoundException" message="impl:ProfileNotFoundException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="updateDigitalReceiptOptions">
+      <wsdl:input name="updateDigitalReceiptOptionsRequest" message="impl:updateDigitalReceiptOptionsRequest" />
+      <wsdl:output name="updateDigitalReceiptOptionsResponse" message="impl:updateDigitalReceiptOptionsResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ProfileNotFoundException" message="impl:ProfileNotFoundException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="updateChild">
+      <wsdl:input name="updateChildRequest" message="impl:updateChildRequest" />
+      <wsdl:output name="updateChildResponse" message="impl:updateChildResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ProfileNotFoundException" message="impl:ProfileNotFoundException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+      <wsdl:fault name="ChildNotFoundException" message="impl:ChildNotFoundException" />
+    </wsdl:operation>
+    <wsdl:operation name="setPricePlusCardPIN">
+      <wsdl:input name="setPricePlusCardPINRequest" message="impl:setPricePlusCardPINRequest" />
+      <wsdl:output name="setPricePlusCardPINResponse" message="impl:setPricePlusCardPINResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ProfileNotFoundException" message="impl:ProfileNotFoundException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="creditFamilyPointAndBalance">
+      <wsdl:input name="creditFamilyPointAndBalanceRequest" message="impl:creditFamilyPointAndBalanceRequest" />
+      <wsdl:output name="creditFamilyPointAndBalanceResponse" message="impl:creditFamilyPointAndBalanceResponse" />
+      <wsdl:fault name="InvalidPointsException" message="impl:InvalidPointsException" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ProfileNotFoundException" message="impl:ProfileNotFoundException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="updateProfile">
+      <wsdl:input name="updateProfileRequest" message="impl:updateProfileRequest" />
+      <wsdl:output name="updateProfileResponse" message="impl:updateProfileResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ProfileNotFoundException" message="impl:ProfileNotFoundException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="getFamiliesPointDetails">
+      <wsdl:input name="getFamiliesPointDetailsRequest" message="impl:getFamiliesPointDetailsRequest" />
+      <wsdl:output name="getFamiliesPointDetailsResponse" message="impl:getFamiliesPointDetailsResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ProfileNotFoundException" message="impl:ProfileNotFoundException" />
+    </wsdl:operation>
+    <wsdl:operation name="validateProfileV2">
+      <wsdl:input name="validateProfileV2Request" message="impl:validateProfileV2Request" />
+      <wsdl:output name="validateProfileV2Response" message="impl:validateProfileV2Response" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="enrollNewProfile">
+      <wsdl:input name="enrollNewProfileRequest" message="impl:enrollNewProfileRequest" />
+      <wsdl:output name="enrollNewProfileResponse" message="impl:enrollNewProfileResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ProfileExistsException" message="impl:ProfileExistsException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="addTargetedCoupon">
+      <wsdl:input name="addTargetedCouponRequest" message="impl:addTargetedCouponRequest" />
+      <wsdl:output name="addTargetedCouponResponse" message="impl:addTargetedCouponResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ProfileNotFoundException" message="impl:ProfileNotFoundException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="getProfile">
+      <wsdl:input name="getProfileRequest" message="impl:getProfileRequest" />
+      <wsdl:output name="getProfileResponse" message="impl:getProfileResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="enrollNewProfileV2">
+      <wsdl:input name="enrollNewProfileV2Request" message="impl:enrollNewProfileV2Request" />
+      <wsdl:output name="enrollNewProfileV2Response" message="impl:enrollNewProfileV2Response" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ProfileExistsException" message="impl:ProfileExistsException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="getChildren">
+      <wsdl:input name="getChildrenRequest" message="impl:getChildrenRequest" />
+      <wsdl:output name="getChildrenResponse" message="impl:getChildrenResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ProfileNotFoundException" message="impl:ProfileNotFoundException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="validateProfile">
+      <wsdl:input name="validateProfileRequest" message="impl:validateProfileRequest" />
+      <wsdl:output name="validateProfileResponse" message="impl:validateProfileResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="updateProfilePartnerNumber">
+      <wsdl:input name="updateProfilePartnerNumberRequest" message="impl:updateProfilePartnerNumberRequest" />
+      <wsdl:output name="updateProfilePartnerNumberResponse" message="impl:updateProfilePartnerNumberResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="validatePartnerNumber">
+      <wsdl:input name="validatePartnerNumberRequest" message="impl:validatePartnerNumberRequest" />
+      <wsdl:output name="validatePartnerNumberResponse" message="impl:validatePartnerNumberResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+    </wsdl:operation>
+    <wsdl:operation name="getRedeemableFamiliesPointDetails">
+      <wsdl:input name="getRedeemableFamiliesPointDetailsRequest" message="impl:getRedeemableFamiliesPointDetailsRequest" />
+      <wsdl:output name="getRedeemableFamiliesPointDetailsResponse" message="impl:getRedeemableFamiliesPointDetailsResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ProfileNotFoundException" message="impl:ProfileNotFoundException" />
+    </wsdl:operation>
+    <wsdl:operation name="profanityCheck">
+      <wsdl:input name="profanityCheckRequest" message="impl:profanityCheckRequest" />
+      <wsdl:output name="profanityCheckResponse" message="impl:profanityCheckResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+    <wsdl:operation name="standardizeAddress">
+      <wsdl:input name="standardizeAddressRequest" message="impl:standardizeAddressRequest" />
+      <wsdl:output name="standardizeAddressResponse" message="impl:standardizeAddressResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="InvalidAddressException" message="impl:InvalidAddressException" />
+    </wsdl:operation>
+    <wsdl:operation name="getChild">
+      <wsdl:input name="getChildRequest" message="impl:getChildRequest" />
+      <wsdl:output name="getChildResponse" message="impl:getChildResponse" />
+      <wsdl:fault name="PricePlusException" message="impl:PricePlusException" />
+      <wsdl:fault name="ProfileNotFoundException" message="impl:ProfileNotFoundException" />
+      <wsdl:fault name="InvalidInputDataException" message="impl:InvalidInputDataException" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="PricePlusJavaBeanSoapBinding" type="impl:PricePlusJavaBean">
+    <wsaw:UsingAddressing wsdl:required="false" />
+    <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="requestAdditionalCard">
+      <wsdlsoap:operation soapAction="requestAdditionalCard" />
+      <wsdl:input name="requestAdditionalCardRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="requestAdditionalCardResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileNotFoundException">
+        <wsdlsoap:fault use="literal" name="ProfileNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTargetedCoupons">
+      <wsdlsoap:operation soapAction="getTargetedCoupons" />
+      <wsdl:input name="getTargetedCouponsRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getTargetedCouponsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileNotFoundException">
+        <wsdlsoap:fault use="literal" name="ProfileNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getDigitalReceiptOptions">
+      <wsdlsoap:operation soapAction="getDigitalReceiptOptions" />
+      <wsdl:input name="getDigitalReceiptOptionsRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getDigitalReceiptOptionsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileNotFoundException">
+        <wsdlsoap:fault use="literal" name="ProfileNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addChild">
+      <wsdlsoap:operation soapAction="addChild" />
+      <wsdl:input name="addChildRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="addChildResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ChildExistsException">
+        <wsdlsoap:fault use="literal" name="ChildExistsException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileNotFoundException">
+        <wsdlsoap:fault use="literal" name="ProfileNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="enrollSRFamily">
+      <wsdlsoap:operation soapAction="enrollSRFamily" />
+      <wsdl:input name="enrollSRFamilyRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="enrollSRFamilyResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileNotFoundException">
+        <wsdlsoap:fault use="literal" name="ProfileNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="validateProfile2">
+      <wsdlsoap:operation soapAction="validateProfile2" />
+      <wsdl:input name="validateProfile2Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="validateProfile2Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProfile2">
+      <wsdlsoap:operation soapAction="getProfile2" />
+      <wsdl:input name="getProfile2Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getProfile2Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="deleteChild">
+      <wsdlsoap:operation soapAction="deleteChild" />
+      <wsdl:input name="deleteChildRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="deleteChildResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileNotFoundException">
+        <wsdlsoap:fault use="literal" name="ProfileNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ChildNotFoundException">
+        <wsdlsoap:fault use="literal" name="ChildNotFoundException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getTargetedMessages">
+      <wsdlsoap:operation soapAction="getTargetedMessages" />
+      <wsdl:input name="getTargetedMessagesRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getTargetedMessagesResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileNotFoundException">
+        <wsdlsoap:fault use="literal" name="ProfileNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateChildren">
+      <wsdlsoap:operation soapAction="updateChildren" />
+      <wsdl:input name="updateChildrenRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateChildrenResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileNotFoundException">
+        <wsdlsoap:fault use="literal" name="ProfileNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ChildNotFoundException">
+        <wsdlsoap:fault use="literal" name="ChildNotFoundException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="isPricePlusCardPINSet">
+      <wsdlsoap:operation soapAction="isPricePlusCardPINSet" />
+      <wsdl:input name="isPricePlusCardPINSetRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="isPricePlusCardPINSetResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileNotFoundException">
+        <wsdlsoap:fault use="literal" name="ProfileNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="debitFamilyPointAndBalance">
+      <wsdlsoap:operation soapAction="debitFamilyPointAndBalance" />
+      <wsdl:input name="debitFamilyPointAndBalanceRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="debitFamilyPointAndBalanceResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidPointsException">
+        <wsdlsoap:fault use="literal" name="InvalidPointsException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileNotFoundException">
+        <wsdlsoap:fault use="literal" name="ProfileNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getAllActiveClubPointDetails">
+      <wsdlsoap:operation soapAction="getAllActiveClubPointDetails" />
+      <wsdl:input name="getAllActiveClubPointDetailsRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getAllActiveClubPointDetailsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileNotFoundException">
+        <wsdlsoap:fault use="literal" name="ProfileNotFoundException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProfileV2">
+      <wsdlsoap:operation soapAction="getProfileV2" />
+      <wsdl:input name="getProfileV2Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getProfileV2Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProfile2V2">
+      <wsdlsoap:operation soapAction="getProfile2V2" />
+      <wsdl:input name="getProfile2V2Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getProfile2V2Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="validateProfile2V2">
+      <wsdlsoap:operation soapAction="validateProfile2V2" />
+      <wsdl:input name="validateProfile2V2Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="validateProfile2V2Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getPricePlusCardBalance">
+      <wsdlsoap:operation soapAction="getPricePlusCardBalance" />
+      <wsdl:input name="getPricePlusCardBalanceRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getPricePlusCardBalanceResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileNotFoundException">
+        <wsdlsoap:fault use="literal" name="ProfileNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateDigitalReceiptOptions">
+      <wsdlsoap:operation soapAction="updateDigitalReceiptOptions" />
+      <wsdl:input name="updateDigitalReceiptOptionsRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateDigitalReceiptOptionsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileNotFoundException">
+        <wsdlsoap:fault use="literal" name="ProfileNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateChild">
+      <wsdlsoap:operation soapAction="updateChild" />
+      <wsdl:input name="updateChildRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateChildResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileNotFoundException">
+        <wsdlsoap:fault use="literal" name="ProfileNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ChildNotFoundException">
+        <wsdlsoap:fault use="literal" name="ChildNotFoundException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="setPricePlusCardPIN">
+      <wsdlsoap:operation soapAction="setPricePlusCardPIN" />
+      <wsdl:input name="setPricePlusCardPINRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="setPricePlusCardPINResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileNotFoundException">
+        <wsdlsoap:fault use="literal" name="ProfileNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="creditFamilyPointAndBalance">
+      <wsdlsoap:operation soapAction="creditFamilyPointAndBalance" />
+      <wsdl:input name="creditFamilyPointAndBalanceRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="creditFamilyPointAndBalanceResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="InvalidPointsException">
+        <wsdlsoap:fault use="literal" name="InvalidPointsException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileNotFoundException">
+        <wsdlsoap:fault use="literal" name="ProfileNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateProfile">
+      <wsdlsoap:operation soapAction="updateProfile" />
+      <wsdl:input name="updateProfileRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateProfileResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileNotFoundException">
+        <wsdlsoap:fault use="literal" name="ProfileNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getFamiliesPointDetails">
+      <wsdlsoap:operation soapAction="getFamiliesPointDetails" />
+      <wsdl:input name="getFamiliesPointDetailsRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getFamiliesPointDetailsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileNotFoundException">
+        <wsdlsoap:fault use="literal" name="ProfileNotFoundException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="validateProfileV2">
+      <wsdlsoap:operation soapAction="validateProfileV2" />
+      <wsdl:input name="validateProfileV2Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="validateProfileV2Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="enrollNewProfile">
+      <wsdlsoap:operation soapAction="enrollNewProfile" />
+      <wsdl:input name="enrollNewProfileRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="enrollNewProfileResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileExistsException">
+        <wsdlsoap:fault use="literal" name="ProfileExistsException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="addTargetedCoupon">
+      <wsdlsoap:operation soapAction="addTargetedCoupon" />
+      <wsdl:input name="addTargetedCouponRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="addTargetedCouponResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileNotFoundException">
+        <wsdlsoap:fault use="literal" name="ProfileNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getProfile">
+      <wsdlsoap:operation soapAction="getProfile" />
+      <wsdl:input name="getProfileRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getProfileResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="enrollNewProfileV2">
+      <wsdlsoap:operation soapAction="enrollNewProfileV2" />
+      <wsdl:input name="enrollNewProfileV2Request">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="enrollNewProfileV2Response">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileExistsException">
+        <wsdlsoap:fault use="literal" name="ProfileExistsException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getChildren">
+      <wsdlsoap:operation soapAction="getChildren" />
+      <wsdl:input name="getChildrenRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getChildrenResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileNotFoundException">
+        <wsdlsoap:fault use="literal" name="ProfileNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="validateProfile">
+      <wsdlsoap:operation soapAction="validateProfile" />
+      <wsdl:input name="validateProfileRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="validateProfileResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="updateProfilePartnerNumber">
+      <wsdlsoap:operation soapAction="updateProfilePartnerNumber" />
+      <wsdl:input name="updateProfilePartnerNumberRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="updateProfilePartnerNumberResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="validatePartnerNumber">
+      <wsdlsoap:operation soapAction="validatePartnerNumber" />
+      <wsdl:input name="validatePartnerNumberRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="validatePartnerNumberResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getRedeemableFamiliesPointDetails">
+      <wsdlsoap:operation soapAction="getRedeemableFamiliesPointDetails" />
+      <wsdl:input name="getRedeemableFamiliesPointDetailsRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getRedeemableFamiliesPointDetailsResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileNotFoundException">
+        <wsdlsoap:fault use="literal" name="ProfileNotFoundException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="profanityCheck">
+      <wsdlsoap:operation soapAction="profanityCheck" />
+      <wsdl:input name="profanityCheckRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="profanityCheckResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="standardizeAddress">
+      <wsdlsoap:operation soapAction="standardizeAddress" />
+      <wsdl:input name="standardizeAddressRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="standardizeAddressResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidAddressException">
+        <wsdlsoap:fault use="literal" name="InvalidAddressException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+    <wsdl:operation name="getChild">
+      <wsdlsoap:operation soapAction="getChild" />
+      <wsdl:input name="getChildRequest">
+        <wsdlsoap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output name="getChildResponse">
+        <wsdlsoap:body use="literal" />
+      </wsdl:output>
+      <wsdl:fault name="PricePlusException">
+        <wsdlsoap:fault use="literal" name="PricePlusException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="ProfileNotFoundException">
+        <wsdlsoap:fault use="literal" name="ProfileNotFoundException" namespace="" />
+      </wsdl:fault>
+      <wsdl:fault name="InvalidInputDataException">
+        <wsdlsoap:fault use="literal" name="InvalidInputDataException" namespace="" />
+      </wsdl:fault>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="PricePlusJavaBeanService">
+    <wsdl:port name="PricePlusJavaBean" binding="impl:PricePlusJavaBeanSoapBinding">
+      <wsdlsoap:address location="http://65.51.66.147:80/pricepluswebservices/services/PricePlusJavaBean" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
